@@ -9,7 +9,6 @@ import 'dart:js_interop';
 import 'package:stripe_js/stripe_js.dart';
 
 extension type Stripe.__(JSObject o) {
-  @JS("Stripe")
   external Stripe._(String publicKey, [StripeOptions? options]);
   factory Stripe(String publicKey, [StripeOptions? options]) {
     return Stripe._(publicKey, options);
