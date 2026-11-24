@@ -321,6 +321,9 @@ _PaymentSheetAppearance _$PaymentSheetAppearanceFromJson(
     _$NavigationBarStyleEnumMap,
     json['navigationBarStyle'],
   ),
+  font: json['font'] == null
+      ? null
+      : PaymentSheetFont.fromJson(json['font'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$PaymentSheetAppearanceToJson(
@@ -334,6 +337,7 @@ Map<String, dynamic> _$PaymentSheetAppearanceToJson(
   'applyLiquidGlass': instance.applyLiquidGlass,
   'navigationBarStyle':
       _$NavigationBarStyleEnumMap[instance.navigationBarStyle],
+  'font': instance.font?.toJson(),
 };
 
 const _$NavigationBarStyleEnumMap = {
@@ -391,6 +395,15 @@ Map<String, dynamic> _$PaymentSheetShapeToJson(_PaymentSheetShape instance) =>
       'shadow': instance.shadow?.toJson(),
     };
 
+_PaymentSheetFont _$PaymentSheetFontFromJson(Map<String, dynamic> json) =>
+    _PaymentSheetFont(
+      family: json['family'] as String?,
+      scale: (json['scale'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$PaymentSheetFontToJson(_PaymentSheetFont instance) =>
+    <String, dynamic>{'family': instance.family, 'scale': instance.scale};
+
 _PaymentSheetShadowParams _$PaymentSheetShadowParamsFromJson(
   Map<String, dynamic> json,
 ) => _PaymentSheetShadowParams(
@@ -435,6 +448,9 @@ _$PaymentSheetPrimaryButtonAppearanceFromJson(Map<String, dynamic> json) =>
           : PaymentSheetPrimaryButtonShape.fromJson(
               json['shapes'] as Map<String, dynamic>,
             ),
+      font: json['font'] == null
+          ? null
+          : PaymentSheetFont.fromJson(json['font'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PaymentSheetPrimaryButtonAppearanceToJson(
@@ -442,6 +458,7 @@ Map<String, dynamic> _$PaymentSheetPrimaryButtonAppearanceToJson(
 ) => <String, dynamic>{
   'colors': instance.colors?.toJson(),
   'shapes': instance.shapes?.toJson(),
+  'font': instance.font?.toJson(),
 };
 
 _PaymentSheetPrimaryButtonShape _$PaymentSheetPrimaryButtonShapeFromJson(
@@ -454,6 +471,8 @@ _PaymentSheetPrimaryButtonShape _$PaymentSheetPrimaryButtonShapeFromJson(
         ),
   blurRadius: (json['blurRadius'] as num?)?.toDouble(),
   borderWidth: (json['borderWidth'] as num?)?.toDouble(),
+  borderRadius: (json['borderRadius'] as num?)?.toDouble(),
+  height: (json['height'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$PaymentSheetPrimaryButtonShapeToJson(
@@ -462,6 +481,8 @@ Map<String, dynamic> _$PaymentSheetPrimaryButtonShapeToJson(
   'shadow': instance.shadow?.toJson(),
   'blurRadius': instance.blurRadius,
   'borderWidth': instance.borderWidth,
+  'borderRadius': instance.borderRadius,
+  'height': instance.height,
 };
 
 _PaymentSheetPrimaryButtonTheme _$PaymentSheetPrimaryButtonThemeFromJson(

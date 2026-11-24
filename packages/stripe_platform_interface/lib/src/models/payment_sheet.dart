@@ -301,6 +301,8 @@ abstract class PaymentSheetAppearance with _$PaymentSheetAppearance {
 
     /// Describes the navigation bar style (iOS only)
     NavigationBarStyle? navigationBarStyle,
+
+    PaymentSheetFont? font,
   }) = _PaymentSheetAppearance;
 
   factory PaymentSheetAppearance.fromJson(Map<String, dynamic> json) =>
@@ -382,6 +384,16 @@ abstract class PaymentSheetShape with _$PaymentSheetShape {
       _$PaymentSheetShapeFromJson(json);
 }
 
+@freezed
+abstract class PaymentSheetFont with _$PaymentSheetFont {
+  @JsonSerializable(explicitToJson: true)
+  const factory PaymentSheetFont({String? family, double? scale}) =
+      _PaymentSheetFont;
+
+  factory PaymentSheetFont.fromJson(Map<String, dynamic> json) =>
+      _$PaymentSheetFontFromJson(json);
+}
+
 /// Shadow config parameters
 @freezed
 abstract class PaymentSheetShadowParams with _$PaymentSheetShadowParams {
@@ -427,6 +439,8 @@ abstract class PaymentSheetPrimaryButtonAppearance
 
     /// Shape params of the primary button
     PaymentSheetPrimaryButtonShape? shapes,
+
+    PaymentSheetFont? font,
   }) = _PaymentSheetPrimaryButtonAppearance;
 
   factory PaymentSheetPrimaryButtonAppearance.fromJson(
@@ -447,6 +461,10 @@ abstract class PaymentSheetPrimaryButtonShape
 
     /// border width of the primary button on the payment sheet
     double? borderWidth,
+
+    double? borderRadius,
+
+    double? height,
   }) = _PaymentSheetPrimaryButtonShape;
 
   factory PaymentSheetPrimaryButtonShape.fromJson(Map<String, dynamic> json) =>

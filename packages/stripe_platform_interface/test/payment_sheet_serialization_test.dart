@@ -25,4 +25,35 @@ void main() {
       'disclosure': {'color': '#FFFF0000'},
     });
   });
+
+  test('primary button shapes send borderRadius and height under the keys the native SDKs read', () {
+    const shape = PaymentSheetPrimaryButtonShape(
+      borderRadius: 24,
+      height: 48,
+      borderWidth: 2,
+    );
+
+    final json = shape.toJson();
+
+    expect(json['borderRadius'], 24.0);
+    expect(json['height'], 48.0);
+    expect(json['borderWidth'], 2.0);
+  });
+
+  test('appearance and primary button carry a font family and scale', () {
+    const appearance = PaymentSheetAppearance(
+      font: PaymentSheetFont(family: 'brandfont', scale: 1.1),
+      primaryButton: PaymentSheetPrimaryButtonAppearance(
+        font: PaymentSheetFont(family: 'brandfontbold'),
+      ),
+    );
+
+    final json = appearance.toJson();
+
+    expect(json['font'], {'family': 'brandfont', 'scale': 1.1});
+    expect(
+      (json['primaryButton'] as Map<String, dynamic>)['font'],
+      {'family': 'brandfontbold', 'scale': null},
+    );
+  });
 }

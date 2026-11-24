@@ -2127,7 +2127,7 @@ mixin _$PaymentSheetAppearance {
 /// Requires iOS26 and Xcode 26, and will be ignored if these requirements are not met.
 /// @default false
  bool? get applyLiquidGlass;/// Describes the navigation bar style (iOS only)
- NavigationBarStyle? get navigationBarStyle;
+ NavigationBarStyle? get navigationBarStyle; PaymentSheetFont? get font;
 /// Create a copy of PaymentSheetAppearance
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2140,16 +2140,16 @@ $PaymentSheetAppearanceCopyWith<PaymentSheetAppearance> get copyWith => _$Paymen
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.primaryButton, primaryButton) || other.primaryButton == primaryButton)&&(identical(other.embeddedPaymentElement, embeddedPaymentElement) || other.embeddedPaymentElement == embeddedPaymentElement)&&(identical(other.formInsetValues, formInsetValues) || other.formInsetValues == formInsetValues)&&(identical(other.applyLiquidGlass, applyLiquidGlass) || other.applyLiquidGlass == applyLiquidGlass)&&(identical(other.navigationBarStyle, navigationBarStyle) || other.navigationBarStyle == navigationBarStyle));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.primaryButton, primaryButton) || other.primaryButton == primaryButton)&&(identical(other.embeddedPaymentElement, embeddedPaymentElement) || other.embeddedPaymentElement == embeddedPaymentElement)&&(identical(other.formInsetValues, formInsetValues) || other.formInsetValues == formInsetValues)&&(identical(other.applyLiquidGlass, applyLiquidGlass) || other.applyLiquidGlass == applyLiquidGlass)&&(identical(other.navigationBarStyle, navigationBarStyle) || other.navigationBarStyle == navigationBarStyle)&&(identical(other.font, font) || other.font == font));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,colors,shapes,primaryButton,embeddedPaymentElement,formInsetValues,applyLiquidGlass,navigationBarStyle);
+int get hashCode => Object.hash(runtimeType,colors,shapes,primaryButton,embeddedPaymentElement,formInsetValues,applyLiquidGlass,navigationBarStyle,font);
 
 @override
 String toString() {
-  return 'PaymentSheetAppearance(colors: $colors, shapes: $shapes, primaryButton: $primaryButton, embeddedPaymentElement: $embeddedPaymentElement, formInsetValues: $formInsetValues, applyLiquidGlass: $applyLiquidGlass, navigationBarStyle: $navigationBarStyle)';
+  return 'PaymentSheetAppearance(colors: $colors, shapes: $shapes, primaryButton: $primaryButton, embeddedPaymentElement: $embeddedPaymentElement, formInsetValues: $formInsetValues, applyLiquidGlass: $applyLiquidGlass, navigationBarStyle: $navigationBarStyle, font: $font)';
 }
 
 
@@ -2160,11 +2160,11 @@ abstract mixin class $PaymentSheetAppearanceCopyWith<$Res>  {
   factory $PaymentSheetAppearanceCopyWith(PaymentSheetAppearance value, $Res Function(PaymentSheetAppearance) _then) = _$PaymentSheetAppearanceCopyWithImpl;
 @useResult
 $Res call({
- PaymentSheetAppearanceColors? colors, PaymentSheetShape? shapes, PaymentSheetPrimaryButtonAppearance? primaryButton, EmbeddedPaymentElementAppearance? embeddedPaymentElement, EdgeInsetsConfig? formInsetValues, bool? applyLiquidGlass, NavigationBarStyle? navigationBarStyle
+ PaymentSheetAppearanceColors? colors, PaymentSheetShape? shapes, PaymentSheetPrimaryButtonAppearance? primaryButton, EmbeddedPaymentElementAppearance? embeddedPaymentElement, EdgeInsetsConfig? formInsetValues, bool? applyLiquidGlass, NavigationBarStyle? navigationBarStyle, PaymentSheetFont? font
 });
 
 
-$PaymentSheetAppearanceColorsCopyWith<$Res>? get colors;$PaymentSheetShapeCopyWith<$Res>? get shapes;$PaymentSheetPrimaryButtonAppearanceCopyWith<$Res>? get primaryButton;$EmbeddedPaymentElementAppearanceCopyWith<$Res>? get embeddedPaymentElement;$EdgeInsetsConfigCopyWith<$Res>? get formInsetValues;
+$PaymentSheetAppearanceColorsCopyWith<$Res>? get colors;$PaymentSheetShapeCopyWith<$Res>? get shapes;$PaymentSheetPrimaryButtonAppearanceCopyWith<$Res>? get primaryButton;$EmbeddedPaymentElementAppearanceCopyWith<$Res>? get embeddedPaymentElement;$EdgeInsetsConfigCopyWith<$Res>? get formInsetValues;$PaymentSheetFontCopyWith<$Res>? get font;
 
 }
 /// @nodoc
@@ -2177,7 +2177,7 @@ class _$PaymentSheetAppearanceCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetAppearance
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? colors = freezed,Object? shapes = freezed,Object? primaryButton = freezed,Object? embeddedPaymentElement = freezed,Object? formInsetValues = freezed,Object? applyLiquidGlass = freezed,Object? navigationBarStyle = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? colors = freezed,Object? shapes = freezed,Object? primaryButton = freezed,Object? embeddedPaymentElement = freezed,Object? formInsetValues = freezed,Object? applyLiquidGlass = freezed,Object? navigationBarStyle = freezed,Object? font = freezed,}) {
   return _then(_self.copyWith(
 colors: freezed == colors ? _self.colors : colors // ignore: cast_nullable_to_non_nullable
 as PaymentSheetAppearanceColors?,shapes: freezed == shapes ? _self.shapes : shapes // ignore: cast_nullable_to_non_nullable
@@ -2186,7 +2186,8 @@ as PaymentSheetPrimaryButtonAppearance?,embeddedPaymentElement: freezed == embed
 as EmbeddedPaymentElementAppearance?,formInsetValues: freezed == formInsetValues ? _self.formInsetValues : formInsetValues // ignore: cast_nullable_to_non_nullable
 as EdgeInsetsConfig?,applyLiquidGlass: freezed == applyLiquidGlass ? _self.applyLiquidGlass : applyLiquidGlass // ignore: cast_nullable_to_non_nullable
 as bool?,navigationBarStyle: freezed == navigationBarStyle ? _self.navigationBarStyle : navigationBarStyle // ignore: cast_nullable_to_non_nullable
-as NavigationBarStyle?,
+as NavigationBarStyle?,font: freezed == font ? _self.font : font // ignore: cast_nullable_to_non_nullable
+as PaymentSheetFont?,
   ));
 }
 /// Create a copy of PaymentSheetAppearance
@@ -2248,6 +2249,18 @@ $EdgeInsetsConfigCopyWith<$Res>? get formInsetValues {
 
   return $EdgeInsetsConfigCopyWith<$Res>(_self.formInsetValues!, (value) {
     return _then(_self.copyWith(formInsetValues: value));
+  });
+}/// Create a copy of PaymentSheetAppearance
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PaymentSheetFontCopyWith<$Res>? get font {
+    if (_self.font == null) {
+    return null;
+  }
+
+  return $PaymentSheetFontCopyWith<$Res>(_self.font!, (value) {
+    return _then(_self.copyWith(font: value));
   });
 }
 }
@@ -2331,10 +2344,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle,  PaymentSheetFont? font)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentSheetAppearance() when $default != null:
-return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle);case _:
+return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle,_that.font);case _:
   return orElse();
 
 }
@@ -2352,10 +2365,10 @@ return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaym
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle,  PaymentSheetFont? font)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetAppearance():
-return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle);case _:
+return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle,_that.font);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -2372,10 +2385,10 @@ return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaym
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetAppearanceColors? colors,  PaymentSheetShape? shapes,  PaymentSheetPrimaryButtonAppearance? primaryButton,  EmbeddedPaymentElementAppearance? embeddedPaymentElement,  EdgeInsetsConfig? formInsetValues,  bool? applyLiquidGlass,  NavigationBarStyle? navigationBarStyle,  PaymentSheetFont? font)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetAppearance() when $default != null:
-return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle);case _:
+return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaymentElement,_that.formInsetValues,_that.applyLiquidGlass,_that.navigationBarStyle,_that.font);case _:
   return null;
 
 }
@@ -2387,7 +2400,7 @@ return $default(_that.colors,_that.shapes,_that.primaryButton,_that.embeddedPaym
 
 @JsonSerializable(explicitToJson: true)
 class _PaymentSheetAppearance implements PaymentSheetAppearance {
-  const _PaymentSheetAppearance({this.colors, this.shapes, this.primaryButton, this.embeddedPaymentElement, this.formInsetValues, this.applyLiquidGlass, this.navigationBarStyle});
+  const _PaymentSheetAppearance({this.colors, this.shapes, this.primaryButton, this.embeddedPaymentElement, this.formInsetValues, this.applyLiquidGlass, this.navigationBarStyle, this.font});
   factory _PaymentSheetAppearance.fromJson(Map<String, dynamic> json) => _$PaymentSheetAppearanceFromJson(json);
 
 /// Color parameters
@@ -2408,6 +2421,7 @@ class _PaymentSheetAppearance implements PaymentSheetAppearance {
 @override final  bool? applyLiquidGlass;
 /// Describes the navigation bar style (iOS only)
 @override final  NavigationBarStyle? navigationBarStyle;
+@override final  PaymentSheetFont? font;
 
 /// Create a copy of PaymentSheetAppearance
 /// with the given fields replaced by the non-null parameter values.
@@ -2422,16 +2436,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.primaryButton, primaryButton) || other.primaryButton == primaryButton)&&(identical(other.embeddedPaymentElement, embeddedPaymentElement) || other.embeddedPaymentElement == embeddedPaymentElement)&&(identical(other.formInsetValues, formInsetValues) || other.formInsetValues == formInsetValues)&&(identical(other.applyLiquidGlass, applyLiquidGlass) || other.applyLiquidGlass == applyLiquidGlass)&&(identical(other.navigationBarStyle, navigationBarStyle) || other.navigationBarStyle == navigationBarStyle));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.primaryButton, primaryButton) || other.primaryButton == primaryButton)&&(identical(other.embeddedPaymentElement, embeddedPaymentElement) || other.embeddedPaymentElement == embeddedPaymentElement)&&(identical(other.formInsetValues, formInsetValues) || other.formInsetValues == formInsetValues)&&(identical(other.applyLiquidGlass, applyLiquidGlass) || other.applyLiquidGlass == applyLiquidGlass)&&(identical(other.navigationBarStyle, navigationBarStyle) || other.navigationBarStyle == navigationBarStyle)&&(identical(other.font, font) || other.font == font));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,colors,shapes,primaryButton,embeddedPaymentElement,formInsetValues,applyLiquidGlass,navigationBarStyle);
+int get hashCode => Object.hash(runtimeType,colors,shapes,primaryButton,embeddedPaymentElement,formInsetValues,applyLiquidGlass,navigationBarStyle,font);
 
 @override
 String toString() {
-  return 'PaymentSheetAppearance(colors: $colors, shapes: $shapes, primaryButton: $primaryButton, embeddedPaymentElement: $embeddedPaymentElement, formInsetValues: $formInsetValues, applyLiquidGlass: $applyLiquidGlass, navigationBarStyle: $navigationBarStyle)';
+  return 'PaymentSheetAppearance(colors: $colors, shapes: $shapes, primaryButton: $primaryButton, embeddedPaymentElement: $embeddedPaymentElement, formInsetValues: $formInsetValues, applyLiquidGlass: $applyLiquidGlass, navigationBarStyle: $navigationBarStyle, font: $font)';
 }
 
 
@@ -2442,11 +2456,11 @@ abstract mixin class _$PaymentSheetAppearanceCopyWith<$Res> implements $PaymentS
   factory _$PaymentSheetAppearanceCopyWith(_PaymentSheetAppearance value, $Res Function(_PaymentSheetAppearance) _then) = __$PaymentSheetAppearanceCopyWithImpl;
 @override @useResult
 $Res call({
- PaymentSheetAppearanceColors? colors, PaymentSheetShape? shapes, PaymentSheetPrimaryButtonAppearance? primaryButton, EmbeddedPaymentElementAppearance? embeddedPaymentElement, EdgeInsetsConfig? formInsetValues, bool? applyLiquidGlass, NavigationBarStyle? navigationBarStyle
+ PaymentSheetAppearanceColors? colors, PaymentSheetShape? shapes, PaymentSheetPrimaryButtonAppearance? primaryButton, EmbeddedPaymentElementAppearance? embeddedPaymentElement, EdgeInsetsConfig? formInsetValues, bool? applyLiquidGlass, NavigationBarStyle? navigationBarStyle, PaymentSheetFont? font
 });
 
 
-@override $PaymentSheetAppearanceColorsCopyWith<$Res>? get colors;@override $PaymentSheetShapeCopyWith<$Res>? get shapes;@override $PaymentSheetPrimaryButtonAppearanceCopyWith<$Res>? get primaryButton;@override $EmbeddedPaymentElementAppearanceCopyWith<$Res>? get embeddedPaymentElement;@override $EdgeInsetsConfigCopyWith<$Res>? get formInsetValues;
+@override $PaymentSheetAppearanceColorsCopyWith<$Res>? get colors;@override $PaymentSheetShapeCopyWith<$Res>? get shapes;@override $PaymentSheetPrimaryButtonAppearanceCopyWith<$Res>? get primaryButton;@override $EmbeddedPaymentElementAppearanceCopyWith<$Res>? get embeddedPaymentElement;@override $EdgeInsetsConfigCopyWith<$Res>? get formInsetValues;@override $PaymentSheetFontCopyWith<$Res>? get font;
 
 }
 /// @nodoc
@@ -2459,7 +2473,7 @@ class __$PaymentSheetAppearanceCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetAppearance
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? colors = freezed,Object? shapes = freezed,Object? primaryButton = freezed,Object? embeddedPaymentElement = freezed,Object? formInsetValues = freezed,Object? applyLiquidGlass = freezed,Object? navigationBarStyle = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? colors = freezed,Object? shapes = freezed,Object? primaryButton = freezed,Object? embeddedPaymentElement = freezed,Object? formInsetValues = freezed,Object? applyLiquidGlass = freezed,Object? navigationBarStyle = freezed,Object? font = freezed,}) {
   return _then(_PaymentSheetAppearance(
 colors: freezed == colors ? _self.colors : colors // ignore: cast_nullable_to_non_nullable
 as PaymentSheetAppearanceColors?,shapes: freezed == shapes ? _self.shapes : shapes // ignore: cast_nullable_to_non_nullable
@@ -2468,7 +2482,8 @@ as PaymentSheetPrimaryButtonAppearance?,embeddedPaymentElement: freezed == embed
 as EmbeddedPaymentElementAppearance?,formInsetValues: freezed == formInsetValues ? _self.formInsetValues : formInsetValues // ignore: cast_nullable_to_non_nullable
 as EdgeInsetsConfig?,applyLiquidGlass: freezed == applyLiquidGlass ? _self.applyLiquidGlass : applyLiquidGlass // ignore: cast_nullable_to_non_nullable
 as bool?,navigationBarStyle: freezed == navigationBarStyle ? _self.navigationBarStyle : navigationBarStyle // ignore: cast_nullable_to_non_nullable
-as NavigationBarStyle?,
+as NavigationBarStyle?,font: freezed == font ? _self.font : font // ignore: cast_nullable_to_non_nullable
+as PaymentSheetFont?,
   ));
 }
 
@@ -2531,6 +2546,18 @@ $EdgeInsetsConfigCopyWith<$Res>? get formInsetValues {
 
   return $EdgeInsetsConfigCopyWith<$Res>(_self.formInsetValues!, (value) {
     return _then(_self.copyWith(formInsetValues: value));
+  });
+}/// Create a copy of PaymentSheetAppearance
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PaymentSheetFontCopyWith<$Res>? get font {
+    if (_self.font == null) {
+    return null;
+  }
+
+  return $PaymentSheetFontCopyWith<$Res>(_self.font!, (value) {
+    return _then(_self.copyWith(font: value));
   });
 }
 }
@@ -3159,6 +3186,272 @@ $PaymentSheetShadowParamsCopyWith<$Res>? get shadow {
 
 
 /// @nodoc
+mixin _$PaymentSheetFont {
+
+ String? get family; double? get scale;
+/// Create a copy of PaymentSheetFont
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PaymentSheetFontCopyWith<PaymentSheetFont> get copyWith => _$PaymentSheetFontCopyWithImpl<PaymentSheetFont>(this as PaymentSheetFont, _$identity);
+
+  /// Serializes this PaymentSheetFont to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetFont&&(identical(other.family, family) || other.family == family)&&(identical(other.scale, scale) || other.scale == scale));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,family,scale);
+
+@override
+String toString() {
+  return 'PaymentSheetFont(family: $family, scale: $scale)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $PaymentSheetFontCopyWith<$Res>  {
+  factory $PaymentSheetFontCopyWith(PaymentSheetFont value, $Res Function(PaymentSheetFont) _then) = _$PaymentSheetFontCopyWithImpl;
+@useResult
+$Res call({
+ String? family, double? scale
+});
+
+
+
+
+}
+/// @nodoc
+class _$PaymentSheetFontCopyWithImpl<$Res>
+    implements $PaymentSheetFontCopyWith<$Res> {
+  _$PaymentSheetFontCopyWithImpl(this._self, this._then);
+
+  final PaymentSheetFont _self;
+  final $Res Function(PaymentSheetFont) _then;
+
+/// Create a copy of PaymentSheetFont
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? family = freezed,Object? scale = freezed,}) {
+  return _then(_self.copyWith(
+family: freezed == family ? _self.family : family // ignore: cast_nullable_to_non_nullable
+as String?,scale: freezed == scale ? _self.scale : scale // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [PaymentSheetFont].
+extension PaymentSheetFontPatterns on PaymentSheetFont {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PaymentSheetFont value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PaymentSheetFont() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PaymentSheetFont value)  $default,){
+final _that = this;
+switch (_that) {
+case _PaymentSheetFont():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PaymentSheetFont value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PaymentSheetFont() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? family,  double? scale)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PaymentSheetFont() when $default != null:
+return $default(_that.family,_that.scale);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? family,  double? scale)  $default,) {final _that = this;
+switch (_that) {
+case _PaymentSheetFont():
+return $default(_that.family,_that.scale);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? family,  double? scale)?  $default,) {final _that = this;
+switch (_that) {
+case _PaymentSheetFont() when $default != null:
+return $default(_that.family,_that.scale);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _PaymentSheetFont implements PaymentSheetFont {
+  const _PaymentSheetFont({this.family, this.scale});
+  factory _PaymentSheetFont.fromJson(Map<String, dynamic> json) => _$PaymentSheetFontFromJson(json);
+
+@override final  String? family;
+@override final  double? scale;
+
+/// Create a copy of PaymentSheetFont
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentSheetFontCopyWith<_PaymentSheetFont> get copyWith => __$PaymentSheetFontCopyWithImpl<_PaymentSheetFont>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$PaymentSheetFontToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetFont&&(identical(other.family, family) || other.family == family)&&(identical(other.scale, scale) || other.scale == scale));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,family,scale);
+
+@override
+String toString() {
+  return 'PaymentSheetFont(family: $family, scale: $scale)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PaymentSheetFontCopyWith<$Res> implements $PaymentSheetFontCopyWith<$Res> {
+  factory _$PaymentSheetFontCopyWith(_PaymentSheetFont value, $Res Function(_PaymentSheetFont) _then) = __$PaymentSheetFontCopyWithImpl;
+@override @useResult
+$Res call({
+ String? family, double? scale
+});
+
+
+
+
+}
+/// @nodoc
+class __$PaymentSheetFontCopyWithImpl<$Res>
+    implements _$PaymentSheetFontCopyWith<$Res> {
+  __$PaymentSheetFontCopyWithImpl(this._self, this._then);
+
+  final _PaymentSheetFont _self;
+  final $Res Function(_PaymentSheetFont) _then;
+
+/// Create a copy of PaymentSheetFont
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? family = freezed,Object? scale = freezed,}) {
+  return _then(_PaymentSheetFont(
+family: freezed == family ? _self.family : family // ignore: cast_nullable_to_non_nullable
+as String?,scale: freezed == scale ? _self.scale : scale // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$PaymentSheetShadowParams {
 
 /// Shadow color
@@ -3732,7 +4025,7 @@ mixin _$PaymentSheetPrimaryButtonAppearance {
 
 /// color theme of the primary button
  PaymentSheetPrimaryButtonTheme? get colors;/// Shape params of the primary button
- PaymentSheetPrimaryButtonShape? get shapes;
+ PaymentSheetPrimaryButtonShape? get shapes; PaymentSheetFont? get font;
 /// Create a copy of PaymentSheetPrimaryButtonAppearance
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3745,16 +4038,16 @@ $PaymentSheetPrimaryButtonAppearanceCopyWith<PaymentSheetPrimaryButtonAppearance
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetPrimaryButtonAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetPrimaryButtonAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.font, font) || other.font == font));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,colors,shapes);
+int get hashCode => Object.hash(runtimeType,colors,shapes,font);
 
 @override
 String toString() {
-  return 'PaymentSheetPrimaryButtonAppearance(colors: $colors, shapes: $shapes)';
+  return 'PaymentSheetPrimaryButtonAppearance(colors: $colors, shapes: $shapes, font: $font)';
 }
 
 
@@ -3765,11 +4058,11 @@ abstract mixin class $PaymentSheetPrimaryButtonAppearanceCopyWith<$Res>  {
   factory $PaymentSheetPrimaryButtonAppearanceCopyWith(PaymentSheetPrimaryButtonAppearance value, $Res Function(PaymentSheetPrimaryButtonAppearance) _then) = _$PaymentSheetPrimaryButtonAppearanceCopyWithImpl;
 @useResult
 $Res call({
- PaymentSheetPrimaryButtonTheme? colors, PaymentSheetPrimaryButtonShape? shapes
+ PaymentSheetPrimaryButtonTheme? colors, PaymentSheetPrimaryButtonShape? shapes, PaymentSheetFont? font
 });
 
 
-$PaymentSheetPrimaryButtonThemeCopyWith<$Res>? get colors;$PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes;
+$PaymentSheetPrimaryButtonThemeCopyWith<$Res>? get colors;$PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes;$PaymentSheetFontCopyWith<$Res>? get font;
 
 }
 /// @nodoc
@@ -3782,11 +4075,12 @@ class _$PaymentSheetPrimaryButtonAppearanceCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetPrimaryButtonAppearance
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? colors = freezed,Object? shapes = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? colors = freezed,Object? shapes = freezed,Object? font = freezed,}) {
   return _then(_self.copyWith(
 colors: freezed == colors ? _self.colors : colors // ignore: cast_nullable_to_non_nullable
 as PaymentSheetPrimaryButtonTheme?,shapes: freezed == shapes ? _self.shapes : shapes // ignore: cast_nullable_to_non_nullable
-as PaymentSheetPrimaryButtonShape?,
+as PaymentSheetPrimaryButtonShape?,font: freezed == font ? _self.font : font // ignore: cast_nullable_to_non_nullable
+as PaymentSheetFont?,
   ));
 }
 /// Create a copy of PaymentSheetPrimaryButtonAppearance
@@ -3812,6 +4106,18 @@ $PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes {
 
   return $PaymentSheetPrimaryButtonShapeCopyWith<$Res>(_self.shapes!, (value) {
     return _then(_self.copyWith(shapes: value));
+  });
+}/// Create a copy of PaymentSheetPrimaryButtonAppearance
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PaymentSheetFontCopyWith<$Res>? get font {
+    if (_self.font == null) {
+    return null;
+  }
+
+  return $PaymentSheetFontCopyWith<$Res>(_self.font!, (value) {
+    return _then(_self.copyWith(font: value));
   });
 }
 }
@@ -3895,10 +4201,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes,  PaymentSheetFont? font)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonAppearance() when $default != null:
-return $default(_that.colors,_that.shapes);case _:
+return $default(_that.colors,_that.shapes,_that.font);case _:
   return orElse();
 
 }
@@ -3916,10 +4222,10 @@ return $default(_that.colors,_that.shapes);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes,  PaymentSheetFont? font)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonAppearance():
-return $default(_that.colors,_that.shapes);case _:
+return $default(_that.colors,_that.shapes,_that.font);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3936,10 +4242,10 @@ return $default(_that.colors,_that.shapes);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetPrimaryButtonTheme? colors,  PaymentSheetPrimaryButtonShape? shapes,  PaymentSheetFont? font)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonAppearance() when $default != null:
-return $default(_that.colors,_that.shapes);case _:
+return $default(_that.colors,_that.shapes,_that.font);case _:
   return null;
 
 }
@@ -3951,13 +4257,14 @@ return $default(_that.colors,_that.shapes);case _:
 
 @JsonSerializable(explicitToJson: true)
 class _PaymentSheetPrimaryButtonAppearance implements PaymentSheetPrimaryButtonAppearance {
-  const _PaymentSheetPrimaryButtonAppearance({this.colors, this.shapes});
+  const _PaymentSheetPrimaryButtonAppearance({this.colors, this.shapes, this.font});
   factory _PaymentSheetPrimaryButtonAppearance.fromJson(Map<String, dynamic> json) => _$PaymentSheetPrimaryButtonAppearanceFromJson(json);
 
 /// color theme of the primary button
 @override final  PaymentSheetPrimaryButtonTheme? colors;
 /// Shape params of the primary button
 @override final  PaymentSheetPrimaryButtonShape? shapes;
+@override final  PaymentSheetFont? font;
 
 /// Create a copy of PaymentSheetPrimaryButtonAppearance
 /// with the given fields replaced by the non-null parameter values.
@@ -3972,16 +4279,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetPrimaryButtonAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetPrimaryButtonAppearance&&(identical(other.colors, colors) || other.colors == colors)&&(identical(other.shapes, shapes) || other.shapes == shapes)&&(identical(other.font, font) || other.font == font));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,colors,shapes);
+int get hashCode => Object.hash(runtimeType,colors,shapes,font);
 
 @override
 String toString() {
-  return 'PaymentSheetPrimaryButtonAppearance(colors: $colors, shapes: $shapes)';
+  return 'PaymentSheetPrimaryButtonAppearance(colors: $colors, shapes: $shapes, font: $font)';
 }
 
 
@@ -3992,11 +4299,11 @@ abstract mixin class _$PaymentSheetPrimaryButtonAppearanceCopyWith<$Res> impleme
   factory _$PaymentSheetPrimaryButtonAppearanceCopyWith(_PaymentSheetPrimaryButtonAppearance value, $Res Function(_PaymentSheetPrimaryButtonAppearance) _then) = __$PaymentSheetPrimaryButtonAppearanceCopyWithImpl;
 @override @useResult
 $Res call({
- PaymentSheetPrimaryButtonTheme? colors, PaymentSheetPrimaryButtonShape? shapes
+ PaymentSheetPrimaryButtonTheme? colors, PaymentSheetPrimaryButtonShape? shapes, PaymentSheetFont? font
 });
 
 
-@override $PaymentSheetPrimaryButtonThemeCopyWith<$Res>? get colors;@override $PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes;
+@override $PaymentSheetPrimaryButtonThemeCopyWith<$Res>? get colors;@override $PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes;@override $PaymentSheetFontCopyWith<$Res>? get font;
 
 }
 /// @nodoc
@@ -4009,11 +4316,12 @@ class __$PaymentSheetPrimaryButtonAppearanceCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetPrimaryButtonAppearance
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? colors = freezed,Object? shapes = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? colors = freezed,Object? shapes = freezed,Object? font = freezed,}) {
   return _then(_PaymentSheetPrimaryButtonAppearance(
 colors: freezed == colors ? _self.colors : colors // ignore: cast_nullable_to_non_nullable
 as PaymentSheetPrimaryButtonTheme?,shapes: freezed == shapes ? _self.shapes : shapes // ignore: cast_nullable_to_non_nullable
-as PaymentSheetPrimaryButtonShape?,
+as PaymentSheetPrimaryButtonShape?,font: freezed == font ? _self.font : font // ignore: cast_nullable_to_non_nullable
+as PaymentSheetFont?,
   ));
 }
 
@@ -4041,6 +4349,18 @@ $PaymentSheetPrimaryButtonShapeCopyWith<$Res>? get shapes {
   return $PaymentSheetPrimaryButtonShapeCopyWith<$Res>(_self.shapes!, (value) {
     return _then(_self.copyWith(shapes: value));
   });
+}/// Create a copy of PaymentSheetPrimaryButtonAppearance
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PaymentSheetFontCopyWith<$Res>? get font {
+    if (_self.font == null) {
+    return null;
+  }
+
+  return $PaymentSheetFontCopyWith<$Res>(_self.font!, (value) {
+    return _then(_self.copyWith(font: value));
+  });
 }
 }
 
@@ -4051,7 +4371,7 @@ mixin _$PaymentSheetPrimaryButtonShape {
 /// Configuration of the primary button's shadow.
  PaymentSheetShadowParams? get shadow;/// the blur radius of the button
  double? get blurRadius;/// border width of the primary button on the payment sheet
- double? get borderWidth;
+ double? get borderWidth; double? get borderRadius; double? get height;
 /// Create a copy of PaymentSheetPrimaryButtonShape
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4064,16 +4384,16 @@ $PaymentSheetPrimaryButtonShapeCopyWith<PaymentSheetPrimaryButtonShape> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetPrimaryButtonShape&&(identical(other.shadow, shadow) || other.shadow == shadow)&&(identical(other.blurRadius, blurRadius) || other.blurRadius == blurRadius)&&(identical(other.borderWidth, borderWidth) || other.borderWidth == borderWidth));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentSheetPrimaryButtonShape&&(identical(other.shadow, shadow) || other.shadow == shadow)&&(identical(other.blurRadius, blurRadius) || other.blurRadius == blurRadius)&&(identical(other.borderWidth, borderWidth) || other.borderWidth == borderWidth)&&(identical(other.borderRadius, borderRadius) || other.borderRadius == borderRadius)&&(identical(other.height, height) || other.height == height));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,shadow,blurRadius,borderWidth);
+int get hashCode => Object.hash(runtimeType,shadow,blurRadius,borderWidth,borderRadius,height);
 
 @override
 String toString() {
-  return 'PaymentSheetPrimaryButtonShape(shadow: $shadow, blurRadius: $blurRadius, borderWidth: $borderWidth)';
+  return 'PaymentSheetPrimaryButtonShape(shadow: $shadow, blurRadius: $blurRadius, borderWidth: $borderWidth, borderRadius: $borderRadius, height: $height)';
 }
 
 
@@ -4084,7 +4404,7 @@ abstract mixin class $PaymentSheetPrimaryButtonShapeCopyWith<$Res>  {
   factory $PaymentSheetPrimaryButtonShapeCopyWith(PaymentSheetPrimaryButtonShape value, $Res Function(PaymentSheetPrimaryButtonShape) _then) = _$PaymentSheetPrimaryButtonShapeCopyWithImpl;
 @useResult
 $Res call({
- PaymentSheetShadowParams? shadow, double? blurRadius, double? borderWidth
+ PaymentSheetShadowParams? shadow, double? blurRadius, double? borderWidth, double? borderRadius, double? height
 });
 
 
@@ -4101,11 +4421,13 @@ class _$PaymentSheetPrimaryButtonShapeCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetPrimaryButtonShape
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? shadow = freezed,Object? blurRadius = freezed,Object? borderWidth = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? shadow = freezed,Object? blurRadius = freezed,Object? borderWidth = freezed,Object? borderRadius = freezed,Object? height = freezed,}) {
   return _then(_self.copyWith(
 shadow: freezed == shadow ? _self.shadow : shadow // ignore: cast_nullable_to_non_nullable
 as PaymentSheetShadowParams?,blurRadius: freezed == blurRadius ? _self.blurRadius : blurRadius // ignore: cast_nullable_to_non_nullable
 as double?,borderWidth: freezed == borderWidth ? _self.borderWidth : borderWidth // ignore: cast_nullable_to_non_nullable
+as double?,borderRadius: freezed == borderRadius ? _self.borderRadius : borderRadius // ignore: cast_nullable_to_non_nullable
+as double?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
 }
@@ -4203,10 +4525,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth,  double? borderRadius,  double? height)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonShape() when $default != null:
-return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
+return $default(_that.shadow,_that.blurRadius,_that.borderWidth,_that.borderRadius,_that.height);case _:
   return orElse();
 
 }
@@ -4224,10 +4546,10 @@ return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth,  double? borderRadius,  double? height)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonShape():
-return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
+return $default(_that.shadow,_that.blurRadius,_that.borderWidth,_that.borderRadius,_that.height);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -4244,10 +4566,10 @@ return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PaymentSheetShadowParams? shadow,  double? blurRadius,  double? borderWidth,  double? borderRadius,  double? height)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentSheetPrimaryButtonShape() when $default != null:
-return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
+return $default(_that.shadow,_that.blurRadius,_that.borderWidth,_that.borderRadius,_that.height);case _:
   return null;
 
 }
@@ -4259,7 +4581,7 @@ return $default(_that.shadow,_that.blurRadius,_that.borderWidth);case _:
 
 @JsonSerializable(explicitToJson: true)
 class _PaymentSheetPrimaryButtonShape implements PaymentSheetPrimaryButtonShape {
-  const _PaymentSheetPrimaryButtonShape({this.shadow, this.blurRadius, this.borderWidth});
+  const _PaymentSheetPrimaryButtonShape({this.shadow, this.blurRadius, this.borderWidth, this.borderRadius, this.height});
   factory _PaymentSheetPrimaryButtonShape.fromJson(Map<String, dynamic> json) => _$PaymentSheetPrimaryButtonShapeFromJson(json);
 
 /// Configuration of the primary button's shadow.
@@ -4268,6 +4590,8 @@ class _PaymentSheetPrimaryButtonShape implements PaymentSheetPrimaryButtonShape 
 @override final  double? blurRadius;
 /// border width of the primary button on the payment sheet
 @override final  double? borderWidth;
+@override final  double? borderRadius;
+@override final  double? height;
 
 /// Create a copy of PaymentSheetPrimaryButtonShape
 /// with the given fields replaced by the non-null parameter values.
@@ -4282,16 +4606,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetPrimaryButtonShape&&(identical(other.shadow, shadow) || other.shadow == shadow)&&(identical(other.blurRadius, blurRadius) || other.blurRadius == blurRadius)&&(identical(other.borderWidth, borderWidth) || other.borderWidth == borderWidth));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentSheetPrimaryButtonShape&&(identical(other.shadow, shadow) || other.shadow == shadow)&&(identical(other.blurRadius, blurRadius) || other.blurRadius == blurRadius)&&(identical(other.borderWidth, borderWidth) || other.borderWidth == borderWidth)&&(identical(other.borderRadius, borderRadius) || other.borderRadius == borderRadius)&&(identical(other.height, height) || other.height == height));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,shadow,blurRadius,borderWidth);
+int get hashCode => Object.hash(runtimeType,shadow,blurRadius,borderWidth,borderRadius,height);
 
 @override
 String toString() {
-  return 'PaymentSheetPrimaryButtonShape(shadow: $shadow, blurRadius: $blurRadius, borderWidth: $borderWidth)';
+  return 'PaymentSheetPrimaryButtonShape(shadow: $shadow, blurRadius: $blurRadius, borderWidth: $borderWidth, borderRadius: $borderRadius, height: $height)';
 }
 
 
@@ -4302,7 +4626,7 @@ abstract mixin class _$PaymentSheetPrimaryButtonShapeCopyWith<$Res> implements $
   factory _$PaymentSheetPrimaryButtonShapeCopyWith(_PaymentSheetPrimaryButtonShape value, $Res Function(_PaymentSheetPrimaryButtonShape) _then) = __$PaymentSheetPrimaryButtonShapeCopyWithImpl;
 @override @useResult
 $Res call({
- PaymentSheetShadowParams? shadow, double? blurRadius, double? borderWidth
+ PaymentSheetShadowParams? shadow, double? blurRadius, double? borderWidth, double? borderRadius, double? height
 });
 
 
@@ -4319,11 +4643,13 @@ class __$PaymentSheetPrimaryButtonShapeCopyWithImpl<$Res>
 
 /// Create a copy of PaymentSheetPrimaryButtonShape
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? shadow = freezed,Object? blurRadius = freezed,Object? borderWidth = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? shadow = freezed,Object? blurRadius = freezed,Object? borderWidth = freezed,Object? borderRadius = freezed,Object? height = freezed,}) {
   return _then(_PaymentSheetPrimaryButtonShape(
 shadow: freezed == shadow ? _self.shadow : shadow // ignore: cast_nullable_to_non_nullable
 as PaymentSheetShadowParams?,blurRadius: freezed == blurRadius ? _self.blurRadius : blurRadius // ignore: cast_nullable_to_non_nullable
 as double?,borderWidth: freezed == borderWidth ? _self.borderWidth : borderWidth // ignore: cast_nullable_to_non_nullable
+as double?,borderRadius: freezed == borderRadius ? _self.borderRadius : borderRadius // ignore: cast_nullable_to_non_nullable
+as double?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
 as double?,
   ));
 }
